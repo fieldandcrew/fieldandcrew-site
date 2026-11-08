@@ -68,6 +68,14 @@ a{color:inherit}
   .hero-side{margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:40px max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
 }
 
+
+/* photo band */
+.photo{position:relative;margin:0;background:var(--navy)}
+.photo img{display:block;width:100%;height:clamp(300px,44vw,600px);object-fit:cover;object-position:center 22%}
+.photo figcaption{position:absolute;left:0;bottom:0;background:var(--navy);color:var(--cream);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px max(16px,env(safe-area-inset-left,0px)) 14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:14px}
+.photo figcaption svg line{stroke:var(--cream)}
+@media (max-width:560px){.photo figcaption{font-size:11px;letter-spacing:.08em;padding-block:10px;gap:10px}}
+
 /* sections */
 .sec{padding-block:96px}
 .sec-head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:48px}
@@ -202,6 +210,12 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
       </div>
     </div>
   </section>
+
+
+  <figure class="photo">
+    <img src="images/warehouse.jpg" alt="Field &amp; Crew loading docks with pallets of boxed orders and a delivery truck" width="1600" height="1246" fetchpriority="high">
+    <figcaption><svg width="40" height="6" viewBox="0 0 40 6" aria-hidden="true"><g stroke-width="3"><line x1="0" y1="3" x2="9" y2="3"/><line x1="15" y1="3" x2="24" y2="3"/><line x1="31" y1="3" x2="40" y2="3"/></g></svg>Supplied anywhere in the United States</figcaption>
+  </figure>
 
   <section id="who" class="sec band" aria-labelledby="who-h">
     <div class="wrap">
