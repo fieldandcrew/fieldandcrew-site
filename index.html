@@ -118,9 +118,9 @@ a{color:inherit}
 
 /* buyers */
 .buyers{background:var(--cream)}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--navy)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:2px solid var(--navy)}
 .facts div{padding:24px 24px 28px 0;border-bottom:1px solid var(--line);min-width:0}
-.facts div:nth-child(3n+2),.facts div:nth-child(3n){padding-left:24px;border-left:1px solid var(--line)}
+.facts div:nth-child(2n){padding-left:24px;border-left:1px solid var(--line)}
 .facts dt{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
 .facts dd{margin:0;font-size:15px}
 .codes{font-variant-numeric:tabular-nums}
@@ -196,7 +196,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
           <li><b>Brands</b><span>Restaurant and retail chains</span></li>
           <li><b>Facilities</b><span>Jails, detention, shelters</span></li>
         </ul>
-        <p class="note">Serving cities, counties, school districts and multi-location brands across Texas.</p>
+        <p class="note">Serving cities, counties, school districts and multi-location brands across the United States.</p>
       </div>
     </div>
   </section>
@@ -262,7 +262,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     <div class="wrap">
       <div class="sec-head">
         <h2 id="iss-h" class="wide">Everyday Issue</h2>
-        <p>Our core line of crew basics, kept in stock in Dallas so reorders ship fast. Each issue is a standard you can spec once and reorder by number.</p>
+        <p>Our core line of crew basics. Each issue is a standard you can spec once and reorder by number.</p>
       </div>
       <div class="issues">
         <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">01</span></div><h3>Caps</h3><p>6-panel structured cap, cotton twill, adjustable strap. Navy, khaki, black, white.</p></div>
@@ -276,13 +276,13 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     <div class="wrap">
       <div class="sec-head">
         <h2 id="proc-h" class="wide">How ordering works</h2>
-        <p>From your spec to your loading dock. Custom runs take 60 to 90 days; Everyday Issue reorders ship from Dallas stock.</p>
+        <p>From your spec to your loading dock, anywhere in the United States.</p>
       </div>
       <ol class="steps">
-        <li><div class="n">1</div><h3>Send your spec</h3><p>Your bid sheet, current product or a photo. We quote line by line, usually within two business days.</p></li>
+        <li><div class="n">1</div><h3>Send your spec</h3><p>Your bid sheet, current product or a photo. We quote line by line within two to five business days.</p></li>
         <li><div class="n">2</div><h3>Approve samples</h3><p>Physical samples for every line before production, matched to your spec.</p></li>
         <li><div class="n">3</div><h3>We produce</h3><p>Made in partner factories we audit, with fabric origin and test documents on file.</p></li>
-        <li><div class="n">4</div><h3>Delivered and invoiced</h3><p>Palletized delivery anywhere in Texas. Net 30 for agencies and approved accounts.</p></li>
+        <li><div class="n">4</div><h3>Shipped to you</h3><p>Shipped anywhere in the United States, packed and labeled by department or location.</p></li>
       </ol>
     </div>
   </section>
@@ -297,9 +297,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         <div><dt>Vendor documents</dt><dd>W-9, certificate of insurance and capability statement on request.</dd></div>
         <div><dt>Commodity codes (NIGP)</dt><dd class="codes">200 Clothing · 201 Accessories · 345 Safety · 680 Police supplies · 800 Footwear · 850 Textiles</dd></div>
         <div><dt>How we sell</dt><dd>Informal quotes, sealed bids, and cooperative contracts as awarded.</dd></div>
-        <div><dt>Minimums</dt><dd>From 288 pieces per style. Volume pricing at 1,000 and 5,000 units.</dd></div>
-        <div><dt>Payment terms</dt><dd>Net 30 for government agencies and approved accounts. Purchase orders accepted.</dd></div>
-        <div><dt>Service area</dt><dd>Texas, with Dallas–Fort Worth and Houston delivery by our own team.</dd></div>
+        <div><dt>Service area</dt><dd>We supply customers anywhere in the United States.</dd></div>
       </dl>
     </div>
   </section>
@@ -308,7 +306,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     <div class="wrap">
       <aside>
         <h2 id="q-h" class="wide">Request a quote</h2>
-        <p>Tell us what you buy today and how much. We reply with line-item pricing and a sample plan within two business days.</p>
+        <p>Tell us what you buy today and how much. We reply with line-item pricing and a sample plan within two to five business days.</p>
         <p>Prefer email? Send your bid sheet to:</p>
         <div class="addr"><code id="email">bids@fieldandcrew.com</code><button class="copy" type="button" id="copy">Copy</button></div>
       </aside>
@@ -322,7 +320,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
           <select id="need" name="need"><option>Caps and headwear</option><option>Uniforms and polos</option><option>Team wear</option><option>Hi-vis</option><option>Blankets, linens and towels</option><option>Bags</option><option>Sample kit</option><option>Several of these</option></select></div>
         <div class="f"><label for="qty">Approximate quantity</label><input id="qty" name="qty" inputmode="numeric" placeholder="1,200 caps"></div>
         <div class="f full"><label for="msg">Details</label><textarea id="msg" name="msg" placeholder="Colors, logo, sizes, needed-by date, or a link to your bid."></textarea></div>
-        <div class="form-foot"><button class="btn solid" type="submit">Request a quote</button><small>We reply within two business days.</small></div>
+        <div class="form-foot"><button class="btn solid" type="submit">Request a quote</button><small>We reply within two to five business days.</small></div>
         <div class="done" id="done" hidden role="status"></div>
       </form>
     </div>
