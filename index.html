@@ -279,7 +279,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         <p>From your spec to your loading dock, anywhere in the United States.</p>
       </div>
       <ol class="steps">
-        <li><div class="n">1</div><h3>Send your spec</h3><p>Your bid sheet, current product or a photo. We quote line by line within two to five business days.</p></li>
+        <li><div class="n">1</div><h3>Send your spec</h3><p>Your bid sheet, current product or a photo. We quote line by line within five to seven business days.</p></li>
         <li><div class="n">2</div><h3>Approve samples</h3><p>Physical samples for every line before production, matched to your spec.</p></li>
         <li><div class="n">3</div><h3>We produce</h3><p>Made in partner factories we audit, with fabric origin and test documents on file.</p></li>
         <li><div class="n">4</div><h3>Shipped to you</h3><p>Shipped anywhere in the United States, packed and labeled by department or location.</p></li>
@@ -306,9 +306,9 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     <div class="wrap">
       <aside>
         <h2 id="q-h" class="wide">Request a quote</h2>
-        <p>Tell us what you buy today and how much. We reply with line-item pricing and a sample plan within two to five business days.</p>
+        <p>Tell us what you buy today and how much. We reply with line-item pricing and a sample plan within five to seven business days.</p>
         <p>Prefer email? Send your bid sheet to:</p>
-        <div class="addr"><code id="email">bids@fieldandcrew.com</code><button class="copy" type="button" id="copy">Copy</button></div>
+        <div class="addr"><code id="email">quote@fieldandcrew.com</code><button class="copy" type="button" id="copy">Copy</button></div>
       </aside>
       <form id="qform" novalidate>
         <div class="f"><label for="org">Organization</label><input id="org" name="org" autocomplete="organization" required placeholder="City of Plano Parks"></div>
@@ -320,7 +320,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
           <select id="need" name="need"><option>Caps and headwear</option><option>Uniforms and polos</option><option>Team wear</option><option>Hi-vis</option><option>Blankets, linens and towels</option><option>Bags</option><option>Sample kit</option><option>Several of these</option></select></div>
         <div class="f"><label for="qty">Approximate quantity</label><input id="qty" name="qty" inputmode="numeric" placeholder="1,200 caps"></div>
         <div class="f full"><label for="msg">Details</label><textarea id="msg" name="msg" placeholder="Colors, logo, sizes, needed-by date, or a link to your bid."></textarea></div>
-        <div class="form-foot"><button class="btn solid" type="submit">Request a quote</button><small>We reply within two to five business days.</small></div>
+        <div class="form-foot"><button class="btn solid" type="submit">Request a quote</button><small>We reply within five to seven business days.</small></div>
         <div class="done" id="done" hidden role="status"></div>
       </form>
     </div>
@@ -335,7 +335,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
       <p style="margin-top:18px">Wholesale apparel and textiles for crews, teams, brands and facilities.</p>
     </div>
     <ul aria-label="Sections"><li><a href="#who">Who we supply</a></li><li><a href="#products">Products</a></li><li><a href="#process">How ordering works</a></li><li><a href="#buyers">For buyers</a></li></ul>
-    <ul aria-label="Contact"><li>bids@fieldandcrew.com</li><li>raymond@fieldandcrew.com</li><li>Dallas, Texas</li></ul>
+    <ul aria-label="Contact"><li>quote@fieldandcrew.com</li><li>raymond@fieldandcrew.com</li><li>Dallas, Texas</li></ul>
     <div class="legal"><span>© 2026 Field &amp; Crew Supply</span><span>Crew. Field. Team. Supplied.</span></div>
   </div>
 </footer>
@@ -352,7 +352,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     const v=id=>document.getElementById(id).value.trim();
     const summary='Organization: '+v('org')+'\nName: '+v('name')+'\nEmail: '+v('mail')+'\nType: '+v('type')+'\nProducts: '+v('need')+'\nQuantity: '+(v('qty')||'—')+'\nDetails: '+(v('msg')||'—');
     done.hidden=false;
-    done.innerHTML='<p><strong>Quote request ready.</strong> Online submission goes live with our launch. For now, copy this summary into an email to bids@fieldandcrew.com.</p><pre></pre>';
+    done.innerHTML='<p><strong>Quote request ready.</strong> Online submission goes live with our launch. For now, copy this summary into an email to quote@fieldandcrew.com.</p><pre></pre>';
     done.querySelector('pre').textContent=summary;
   });
   const btn=document.getElementById('copy');
