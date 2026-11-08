@@ -72,7 +72,7 @@ a{color:inherit}
 
 
 /* photo band */
-.photo{position:relative;margin:0;background:var(--navy)}
+.photo{position:relative;margin:0;background:var(--navy);overflow:hidden}
 .photo img{display:block;width:100%;height:clamp(320px,54vw,720px);object-fit:cover;object-position:center 12%;opacity:.9;filter:contrast(1.06) saturate(1.05)}
 .photo figcaption{position:absolute;left:0;bottom:0;background:var(--navy);color:var(--cream);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px max(16px,env(safe-area-inset-left,0px)) 14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:14px}
 .photo figcaption svg line{stroke:var(--cream)}
@@ -177,7 +177,45 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 .foot a{text-decoration:none}.foot a:hover{text-decoration:underline}
 .legal{grid-column:1/-1;border-top:1px solid rgba(239,230,200,.25);padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;opacity:.75}
 @media (max-width:820px){.foot .wrap{grid-template-columns:1fr}}
+
+/* motion */
+@media (prefers-reduced-motion:no-preference){
+  .hero .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em;margin-bottom:-.06em}
+  .hero .w>span{display:inline-block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.12s + var(--i)*.12s)}
+  .hero-main p,.hero .ctas{animation:fade .8s ease both;animation-delay:.55s}
+  .hero .ctas{animation-delay:.75s}
+  .hero-main .stitch line{stroke-dasharray:16;stroke-dashoffset:16;animation:sew .35s ease-out forwards}
+  .hero-main .stitch line:nth-child(1){animation-delay:.7s}.hero-main .stitch line:nth-child(2){animation-delay:.85s}.hero-main .stitch line:nth-child(3){animation-delay:1s}
+  .who li{animation:slide .7s cubic-bezier(.2,.7,.2,1) both}
+  .who li:nth-child(1){animation-delay:.35s}.who li:nth-child(2){animation-delay:.45s}.who li:nth-child(3){animation-delay:.55s}.who li:nth-child(4){animation-delay:.65s}
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .aud .reveal:nth-child(2),.js .issues .reveal:nth-child(2){transition-delay:.08s}
+  .js .aud .reveal:nth-child(3),.js .issues .reveal:nth-child(3){transition-delay:.16s}
+  .js .aud .reveal:nth-child(4),.js .issues .reveal:nth-child(4){transition-delay:.24s}
+  .js .reveal-kids>*{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal-kids.in>*{opacity:1;transform:none}
+  .js .reveal-kids.in>*:nth-child(2){transition-delay:.08s}.js .reveal-kids.in>*:nth-child(3){transition-delay:.16s}.js .reveal-kids.in>*:nth-child(4){transition-delay:.24s}
+  .aud .ph img{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .4s ease}
+  .aud article:hover .ph img{transform:scale(1.045);opacity:1}
+  .tag{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+  .tag:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+  .tag .stitch g{transition:transform .35s ease}
+  .tag:hover .stitch g{transform:translateX(6px)}
+  .photo img{will-change:transform}
+  .top{transition:box-shadow .3s ease}
+  .btn{transition:background-color .2s ease,color .2s ease,transform .2s ease}
+  .btn:active{transform:translateY(1px)}
+}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes sew{to{stroke-dashoffset:0}}
+@keyframes slide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.top.scrolled{box-shadow:0 6px 18px rgba(21,32,51,.08)}
+.spec tbody tr{transition:background-color .2s ease}
+.spec tbody tr:hover{background:var(--paper)}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="top band">
@@ -198,7 +236,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     <div class="wrap">
       <div class="hero-main">
         <div>
-          <h1 id="h1" class="wide">Your standard, supplied.</h1>
+          <h1 id="h1" class="wide" aria-label="Your standard, supplied."><span class="w" aria-hidden="true"><span style="--i:0">Your</span></span> <span class="w" aria-hidden="true"><span style="--i:1">standard,</span></span> <span class="w" aria-hidden="true"><span style="--i:2">supplied.</span></span></h1>
           <p>One source for every crew, team, brand and facility.</p>
         </div>
         <div>
@@ -229,33 +267,33 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 
   <section id="who" class="sec band" aria-labelledby="who-h">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <h2 id="who-h" class="wide">Who we supply</h2>
         <p>One supplier for the people who keep a city running, the teams it cheers for, the brands it eats at and the facilities it operates.</p>
       </div>
       <div class="aud">
-        <article>
+        <article class="reveal">
           <div class="ph"><img src="images/crews.jpg" alt="City crew member repairing a traffic signal while a police officer directs traffic at sunset" width="1000" height="563" loading="lazy" style="object-position:42% 50%"></div>
           <h3 class="wide">Crews</h3>
           <p class="for">Cities, police, fire, public works and parks</p>
           <ul><li>Caps and beanies</li><li>Uniform shirts and polos</li><li>Work pants and jackets</li></ul>
           <p class="pitch">Your go-to supplier for crew apparel, priced direct from the factory.</p>
         </article>
-        <article>
+        <article class="reveal">
           <div class="ph"><img src="images/teams.jpg" alt="Youth baseball player at bat with his coach kneeling beside him" width="1000" height="563" loading="lazy" style="object-position:58% 50%"></div>
           <h3 class="wide">Teams</h3>
           <p class="for">School athletics, coaches, booster clubs and youth leagues</p>
           <ul><li>Team caps and visors</li><li>Practice and game wear</li><li>Spirit wear</li></ul>
           <p class="pitch">Team wear and caps, made to spec and delivered before the season.</p>
         </article>
-        <article>
+        <article class="reveal">
           <div class="ph"><img src="images/brands.jpg" alt="Restaurant team member in a cap and apron handing a burger to a customer" width="763" height="505" loading="lazy" style="object-position:55% 50%"></div>
           <h3 class="wide">Brands</h3>
           <p class="for">Restaurant, retail and hotel groups</p>
           <ul><li>Staff tees and polos</li><li>Caps and aprons</li><li>Chef and kitchen wear</li><li>Branded uniforms</li></ul>
           <p class="pitch">Staff uniforms that look like your brand, priced like a factory.</p>
         </article>
-        <article>
+        <article class="reveal">
           <div class="ph"><img src="images/facilities.jpg" alt="Warehouse shelving stacked with folded linens, towels and orange jumpsuits" width="763" height="504" loading="lazy" style="object-position:50% 50%"></div>
           <h3 class="wide">Facilities</h3>
           <p class="for">County jails, juvenile detention and shelters</p>
@@ -268,11 +306,11 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 
   <section id="products" class="sec products band" aria-labelledby="prod-h">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <h2 id="prod-h" class="wide">What we supply</h2>
         <p>Every product is quoted the same way: material, weight, construction and color, so you can compare us line by line against your current supplier.</p>
       </div>
-      <div class="table-scroll">
+      <div class="table-scroll reveal">
         <table class="spec">
           <thead><tr><th scope="col">Category</th><th scope="col">Products</th><th scope="col">Built to</th></tr></thead>
           <tbody>
@@ -288,26 +326,26 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 
   <section class="sec issue band" aria-labelledby="iss-h">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <h2 id="iss-h" class="wide">Everyday Issue</h2>
         <p>Our standard program for the apparel your people wear every day. Spec it once, then reorder by issue number whenever you need more.</p>
       </div>
       <div class="issues">
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">01</span></div><h3>Crew</h3><p>Everyday uniforms and apparel for city departments, public works, police and fire.</p></div>
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">02</span></div><h3>Field</h3><p>Durable apparel for staff and service teams working on site, outdoors and on the floor.</p></div>
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">03</span></div><h3>Team</h3><p>Practice, game and spirit apparel for school athletics, coaches and youth leagues.</p></div>
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">04</span></div><h3>Brand</h3><p>Staff uniforms, aprons and branded apparel for restaurant, retail and hotel groups.</p></div>
+        <div class="tag reveal"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">01</span></div><h3>Crew</h3><p>Everyday uniforms and apparel for city departments, public works, police and fire.</p></div>
+        <div class="tag reveal"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">02</span></div><h3>Field</h3><p>Durable apparel for staff and service teams working on site, outdoors and on the floor.</p></div>
+        <div class="tag reveal"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">03</span></div><h3>Team</h3><p>Practice, game and spirit apparel for school athletics, coaches and youth leagues.</p></div>
+        <div class="tag reveal"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">04</span></div><h3>Brand</h3><p>Staff uniforms, aprons and branded apparel for restaurant, retail and hotel groups.</p></div>
       </div>
     </div>
   </section>
 
   <section id="process" class="sec band" aria-labelledby="proc-h">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <h2 id="proc-h" class="wide">How ordering works</h2>
         <p>From your spec to your loading dock, anywhere in the United States.</p>
       </div>
-      <ol class="steps">
+      <ol class="steps reveal-kids">
         <li><div class="n">1</div><h3>Send your spec</h3><p>Your bid sheet, current product or a photo. We quote line by line within five to seven business days.</p></li>
         <li><div class="n">2</div><h3>Approve samples</h3><p>Physical samples for every line before production, matched to your spec.</p></li>
         <li><div class="n">3</div><h3>We produce</h3><p>Made in partner factories we audit, with fabric origin and test documents on file.</p></li>
@@ -318,11 +356,11 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 
   <section id="buyers" class="sec buyers band" aria-labelledby="buy-h">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <h2 id="buy-h" class="wide">For procurement officers</h2>
         <p>We quote informal purchases, formal bids and cooperative purchases. Everything you need to add us as a vendor is below or on request.</p>
       </div>
-      <dl class="facts">
+      <dl class="facts reveal-kids">
         <div><dt>Vendor documents</dt><dd>W-9, certificate of insurance and capability statement on request.</dd></div>
         <div><dt>Commodity codes (NIGP)</dt><dd class="codes">200 Clothing · 201 Accessories · 680 Police supplies · 800 Footwear · 850 Textiles</dd></div>
         <div><dt>How we sell</dt><dd>Informal quotes, sealed bids, and cooperative contracts as awarded.</dd></div>
@@ -371,6 +409,20 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 
 <script>
 (function(){
+  document.documentElement.classList.add('js');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets=document.querySelectorAll('.reveal,.reveal-kids');
+  if('IntersectionObserver' in window && !reduce){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(t=>io.observe(t));
+  } else targets.forEach(t=>t.classList.add('in'));
+  const top=document.querySelector('.top'), photo=document.querySelector('.photo img');
+  let ticking=false;
+  const onScroll=()=>{ticking=false;const y=window.scrollY;top.classList.toggle('scrolled',y>8);
+    if(photo&&!reduce){const r=photo.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){photo.style.transform='translateY('+((r.top/innerHeight)*-28).toFixed(1)+'px) scale(1.06)';}}};
+  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(onScroll);}},{passive:true});
+  onScroll();
+
   function fitSubs(){
     document.querySelectorAll('.sub.fit').forEach(el=>{
       const head=el.previousElementSibling; if(!head) return;
