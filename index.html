@@ -376,7 +376,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
       const head=el.previousElementSibling; if(!head) return;
       const r=document.createRange(); r.selectNodeContents(head); const target=r.getBoundingClientRect().width;
       el.style.letterSpacing='0px'; el.style.marginRight='0px';
-      const natural=el.getBoundingClientRect().width; const n=el.textContent.length;
+      const r2=document.createRange(); r2.selectNodeContents(el); const natural=r2.getBoundingClientRect().width; const n=el.textContent.length;
       const ls=Math.max(0,(target-natural)/(n-1));
       el.style.letterSpacing=ls+'px'; el.style.marginRight=(-ls)+'px';
     });
