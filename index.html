@@ -374,7 +374,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
   function fitSubs(){
     document.querySelectorAll('.sub.fit').forEach(el=>{
       const head=el.previousElementSibling; if(!head) return;
-      const r=document.createRange(); r.selectNodeContents(head); const target=r.getBoundingClientRect().width;
+      const r=document.createRange(); r.selectNodeContents(head); const target=r.getBoundingClientRect().width*0.985;
       el.style.letterSpacing='0px'; el.style.marginRight='0px';
       const r2=document.createRange(); r2.selectNodeContents(el); const natural=r2.getBoundingClientRect().width; const n=el.textContent.length;
       const ls=Math.max(0,(target-natural)/(n-1));
@@ -382,6 +382,8 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     });
   }
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fitSubs);
+  if(document.fonts&&document.fonts.addEventListener) document.fonts.addEventListener('loadingdone',fitSubs);
+  window.addEventListener('load',()=>{fitSubs();setTimeout(fitSubs,400);setTimeout(fitSubs,1500);});
   window.addEventListener('resize',fitSubs);
   const form=document.getElementById('qform'), done=document.getElementById('done');
   document.querySelectorAll('[data-need]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('need').value=a.dataset.need;}));
