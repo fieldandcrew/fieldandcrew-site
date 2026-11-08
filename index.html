@@ -70,8 +70,8 @@ a{color:inherit}
 
 
 /* photo band */
-.photo{position:relative;margin:0;background:var(--navy)}
-.photo img{display:block;width:100%;height:clamp(300px,44vw,600px);object-fit:cover;object-position:center 22%}
+.photo{position:relative;margin:0;background:var(--cream)}
+.photo img{display:block;width:100%;height:clamp(300px,44vw,600px);object-fit:cover;object-position:center 22%;opacity:.8;filter:saturate(.85)}
 .photo figcaption{position:absolute;left:0;bottom:0;background:var(--navy);color:var(--cream);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px max(16px,env(safe-area-inset-left,0px)) 14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:14px}
 .photo figcaption svg line{stroke:var(--cream)}
 @media (max-width:560px){.photo figcaption{font-size:11px;letter-spacing:.08em;padding-block:10px;gap:10px}}
