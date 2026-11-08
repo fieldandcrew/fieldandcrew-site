@@ -34,7 +34,8 @@ a{color:inherit}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:14px}
 .wm{text-decoration:none;display:inline-flex;flex-direction:column;line-height:1}
-.wm .sub-svg{display:block;width:0;min-width:100%;margin-top:4px;font-family:var(--sans);overflow:visible}
+.sub{display:block;font-weight:700;white-space:nowrap}
+.wm .sub{font-size:9px;font-stretch:112%;letter-spacing:.24em;margin-right:-.24em;margin-top:5px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wm b{font-weight:800;font-stretch:112%;font-size:20px;letter-spacing:.02em}
 .nav{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:600}
@@ -145,6 +146,7 @@ a{color:inherit}
 .quote h2{font-size:clamp(34px,4.6vw,56px)}
 .quote aside p{color:var(--muted);max-width:40ch}
 .addr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;font-weight:600}
+.addr .mail{text-decoration:none}.addr .mail:hover code{text-decoration:underline;text-underline-offset:3px}
 .addr code{font-family:inherit;font-size:16px;background:var(--cream);padding:6px 10px;border-radius:2px;user-select:all}
 .copy{font:inherit;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--navy);color:var(--navy);padding:6px 10px;border-radius:2px;cursor:pointer}
 form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
@@ -167,7 +169,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 .foot .wrap{padding-block:56px 36px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px 48px;align-items:start}
 .foot .big{font-size:clamp(34px,4.2vw,52px);white-space:nowrap}
 .foot-wm{display:inline-flex;flex-direction:column;margin-bottom:18px}
-.foot-wm .sub-svg{display:block;width:0;min-width:100%;margin-top:8px;font-family:var(--sans);overflow:visible}
+.foot-wm .sub{font-size:18px;font-stretch:118%;letter-spacing:.26em;margin-right:-.26em;margin-top:10px;opacity:1}
 .foot p,.foot li{font-size:14px;opacity:.85}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;align-content:start}
 .foot ul li{line-height:1.45}
@@ -180,7 +182,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 <body>
 <header class="top band">
   <div class="wrap">
-    <a class="wm" href="#top" aria-label="Field and Crew Supply, home"><b>FIELD &amp; CREW</b><svg class="sub-svg" width="100%" height="11" aria-hidden="true"><text x="0" y="10" textLength="100%" lengthAdjust="spacing" font-size="9" font-weight="700" fill="currentColor">WHOLESALE AND SUPPLY</text></svg><span class="vh">Wholesale and Supply</span></a>
+    <a class="wm" href="#top" aria-label="Field and Crew Supply, home"><b>FIELD &amp; CREW</b><span class="sub fit">WHOLESALE AND SUPPLY</span></a>
     <nav class="nav" aria-label="Main">
       <a href="#who">Who we supply</a>
       <a href="#products">Products</a>
@@ -335,7 +337,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         <h2 id="q-h" class="wide">Request a quote</h2>
         <p>Tell us what you buy today and how much. We reply with line-item pricing and a sample plan within five to seven business days.</p>
         <p>Prefer email? Send your bid sheet to:</p>
-        <div class="addr"><code id="email">info@fieldandcrew.com</code><button class="copy" type="button" id="copy">Copy</button></div>
+        <div class="addr"><a class="mail" href="mailto:info@fieldandcrew.com?subject=Quote%20request"><code id="email">info@fieldandcrew.com</code></a><button class="copy" type="button" id="copy">Copy</button></div>
       </aside>
       <form id="qform" novalidate>
         <div class="f"><label for="org">Company, organization or city name</label><input id="org" name="org" autocomplete="organization" required></div>
@@ -357,18 +359,30 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 <footer class="foot band">
   <div class="wrap">
     <div>
-      <div class="foot-wm"><p class="wide big" style="opacity:1">Field &amp; Crew</p><svg class="sub-svg" width="100%" height="18" aria-hidden="true"><text x="0" y="16" textLength="100%" lengthAdjust="spacing" font-size="16" font-weight="700" fill="currentColor">WHOLESALE AND SUPPLY</text></svg><span class="vh">Wholesale and Supply</span></div>
+      <div class="foot-wm"><p class="wide big" style="opacity:1">Field &amp; Crew</p><span class="sub fit">WHOLESALE AND SUPPLY</span></div>
       <svg class="stitch" width="72" height="10" viewBox="0 0 72 10" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="5" x2="16" y2="5"/><line x1="28" y1="5" x2="44" y2="5"/><line x1="56" y1="5" x2="72" y2="5"/></g></svg>
       <p style="margin-top:18px">Wholesale apparel and textiles for crews, teams, brands and facilities.</p>
     </div>
     <ul aria-label="Sections"><li><a href="#who">Who we supply</a></li><li><a href="#products">Products</a></li><li><a href="#process">How ordering works</a></li><li><a href="#buyers">For buyers</a></li></ul>
-    <ul aria-label="Contact"><li>info@fieldandcrew.com</li><li>7700 Windrose Ave.<br>Plano, TX 75024</li></ul>
-    <div class="legal"><span>© 2026 Field &amp; Crew Supply</span><span>Crew. Field. Team. Supplied.</span></div>
+    <ul aria-label="Contact"><li><a href="mailto:info@fieldandcrew.com">info@fieldandcrew.com</a></li><li>7700 Windrose Ave.<br>Plano, TX 75024</li></ul>
+    <div class="legal"><span>© 2026 Field &amp; Crew</span><span>Crew. Field. Team. Supplied.</span></div>
   </div>
 </footer>
 
 <script>
 (function(){
+  function fitSubs(){
+    document.querySelectorAll('.sub.fit').forEach(el=>{
+      const head=el.previousElementSibling; if(!head) return;
+      const r=document.createRange(); r.selectNodeContents(head); const target=r.getBoundingClientRect().width;
+      el.style.letterSpacing='0px'; el.style.marginRight='0px';
+      const natural=el.getBoundingClientRect().width; const n=el.textContent.length;
+      const ls=Math.max(0,(target-natural)/(n-1));
+      el.style.letterSpacing=ls+'px'; el.style.marginRight=(-ls)+'px';
+    });
+  }
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fitSubs);
+  window.addEventListener('resize',fitSubs);
   const form=document.getElementById('qform'), done=document.getElementById('done');
   document.querySelectorAll('[data-need]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('need').value=a.dataset.need;}));
   form.addEventListener('submit',e=>{
