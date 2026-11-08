@@ -185,7 +185,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
           <svg class="stitch" width="72" height="10" viewBox="0 0 72 10" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="5" x2="16" y2="5"/><line x1="28" y1="5" x2="44" y2="5"/><line x1="56" y1="5" x2="72" y2="5"/></g></svg>
           <div class="ctas" style="margin-top:24px">
             <a class="btn solid" href="#quote">Request a quote</a>
-            <a class="btn line" href="#products">See what we make</a>
+            <a class="btn line" href="#products">See what we supply</a>
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         </article>
         <article>
           <h3 class="wide">Brands</h3>
-          <p class="for">Restaurant, retail and hotel groups with 5+ locations</p>
+          <p class="for">Restaurant, retail and hotel groups</p>
           <ul><li>Staff tees and polos</li><li>Caps and aprons</li><li>Chef and kitchen wear</li><li>Branded uniforms</li></ul>
           <p class="pitch">Staff uniforms that look like your brand, priced like a factory.</p>
         </article>
@@ -239,7 +239,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
   <section id="products" class="sec products band" aria-labelledby="prod-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="prod-h" class="wide">What we make</h2>
+        <h2 id="prod-h" class="wide">What we supply</h2>
         <p>Every product is quoted the same way: material, weight, construction and color, so you can compare us line by line against your current supplier.</p>
       </div>
       <div class="table-scroll">
@@ -260,12 +260,12 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     <div class="wrap">
       <div class="sec-head">
         <h2 id="iss-h" class="wide">Everyday Issue</h2>
-        <p>Our core line of crew basics. Each issue is a standard you can spec once and reorder by number.</p>
+        <p>Our standard program for the apparel your people wear every day. Spec it once, then reorder by issue number whenever you need more.</p>
       </div>
       <div class="issues">
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">01</span></div><h3>Caps</h3><p>6-panel structured cap, cotton twill, adjustable strap. Navy, khaki, black, white.</p></div>
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">02</span></div><h3>Polos</h3><p>Performance pique polo, moisture-wicking, left-chest logo ready. XS to 5XL.</p></div>
-        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">03</span></div><h3>Crew basics</h3><p>Heavyweight tees, crewnecks and work shirts in department and brand colors.</p></div>
+        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">01</span></div><h3>Crew</h3><p>Everyday uniforms and apparel for city departments, public works, police and fire.</p></div>
+        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">02</span></div><h3>Field</h3><p>Durable apparel for staff and service teams working on site, outdoors and on the floor.</p></div>
+        <div class="tag"><div class="row"><svg class="stitch" width="54" height="8" viewBox="0 0 54 8" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="4" x2="12" y2="4"/><line x1="21" y1="4" x2="33" y2="4"/><line x1="42" y1="4" x2="54" y2="4"/></g></svg><span class="num">03</span></div><h3>Team</h3><p>Practice, game and spirit apparel for school athletics, coaches and youth leagues.</p></div>
       </div>
     </div>
   </section>
@@ -315,7 +315,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         <div class="f"><label for="type">Type of organization</label>
           <select id="type" name="type"><option>City or county department</option><option>Police or fire department</option><option>School district or team</option><option>Youth league</option><option>Restaurant, retail or hotel group</option><option>Correctional or detention facility</option><option>Team dealer or reseller</option></select></div>
         <div class="f"><label for="need">Products</label>
-          <select id="need" name="need"><option>Headwear</option><option>Uniforms</option><option>Team apparel</option><option>Blankets, linens and towels</option><option>Other</option></select></div>
+          <select id="need" name="need"><option value="" selected disabled>Choose a category</option><option>Uniforms</option><option>Team apparel</option><option>Blankets, linens and towels</option><option>Headwear</option><option>Other</option></select></div>
         <div class="f"><label for="qty">Approximate quantity</label><input id="qty" name="qty" inputmode="numeric" placeholder="1,000 units"></div>
         <div class="f full"><label for="msg">Details</label><textarea id="msg" name="msg" placeholder="Colors, logo, sizes, needed-by date, or a link to your bid."></textarea></div>
         <div class="form-foot"><button class="btn solid" type="submit">Request a quote</button><small>We reply within five to seven business days.</small></div>
@@ -348,7 +348,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     const miss=req.find(el=>!el.value.trim()||(el.type==='email'&&!el.checkValidity()));
     if(miss){done.hidden=false;done.innerHTML='<p><strong>Add your '+miss.previousElementSibling.textContent.toLowerCase()+' to continue.</strong></p>';miss.focus();return;}
     const v=id=>document.getElementById(id).value.trim();
-    const summary='Organization: '+v('org')+'\nName: '+v('name')+'\nEmail: '+v('mail')+'\nType: '+v('type')+'\nProducts: '+v('need')+'\nQuantity: '+(v('qty')||'—')+'\nDetails: '+(v('msg')||'—');
+    const summary='Organization: '+v('org')+'\nName: '+v('name')+'\nEmail: '+v('mail')+'\nType: '+v('type')+'\nProducts: '+(v('need')||'—')+'\nQuantity: '+(v('qty')||'—')+'\nDetails: '+(v('msg')||'—');
     done.hidden=false;
     done.innerHTML='<p><strong>Quote request ready.</strong> Online submission goes live with our launch. For now, copy this summary into an email to info@fieldandcrew.com.</p><pre></pre>';
     done.querySelector('pre').textContent=summary;
