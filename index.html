@@ -17,7 +17,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--paper);color:var(--navy);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
@@ -37,9 +37,10 @@ a{color:inherit}
 .sub{display:block;font-weight:700;white-space:nowrap}
 .wm .sub{font-size:9px;font-stretch:112%;letter-spacing:.24em;margin-right:-.24em;margin-top:5px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wm b{font-weight:800;font-stretch:112%;font-size:20px;letter-spacing:.02em}
+.wm b{font-weight:800;font-stretch:112%;font-size:20px;letter-spacing:.02em;white-space:nowrap}
 .nav{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:600}
 .nav a{text-decoration:none}
+.nav .links{display:flex;gap:26px;align-items:center}
 .nav a:hover{text-decoration:underline;text-underline-offset:4px}
 .btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:15px 22px;border-radius:2px;border:2px solid var(--navy);cursor:pointer}
 .btn.solid{background:var(--navy);color:var(--cream)}
@@ -48,7 +49,25 @@ a{color:inherit}
 .btn.line:hover{background:var(--navy);color:var(--cream)}
 .nav .btn{padding:10px 16px;white-space:nowrap}
 @media (max-width:420px){.nav .btn{padding:9px 12px;font-size:12px;letter-spacing:.08em}}
-@media (max-width:860px){.nav a:not(.btn){display:none}}
+.menu-btn{display:none;font:inherit;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:none;border:2px solid var(--navy);color:var(--navy);border-radius:2px;padding:9px 12px;cursor:pointer;align-items:center;gap:8px}
+.menu-btn .bars{display:inline-block;width:14px;height:2px;background:currentColor;position:relative}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0;width:14px;height:2px;background:currentColor;transition:transform .2s ease}
+.menu-btn .bars::before{top:-5px}.menu-btn .bars::after{top:5px}
+.menu-btn[aria-expanded="true"] .bars{background:transparent}
+.menu-btn[aria-expanded="true"] .bars::before{transform:translateY(5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars::after{transform:translateY(-5px) rotate(-45deg)}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  .nav{gap:10px}
+  .nav .links{display:none}
+  .top.open .nav .links{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));box-shadow:0 12px 24px rgba(21,32,51,.08)}
+  .top.open .nav .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .top.open .nav .links a:last-child{border-bottom:0}
+}
+.menu-only{display:none}
+@media (max-width:480px){.top.open .nav .links .menu-only{display:block;font-weight:700}}
+@media (max-width:480px){.nav>.btn{display:none}}
+@media (max-width:360px){.wm b{font-size:17px}}
 
 /* hero */
 .hero{background:var(--cream)}
@@ -197,11 +216,11 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
   .js .reveal-kids.in>*{opacity:1;transform:none}
   .js .reveal-kids.in>*:nth-child(2){transition-delay:.08s}.js .reveal-kids.in>*:nth-child(3){transition-delay:.16s}.js .reveal-kids.in>*:nth-child(4){transition-delay:.24s}
   .aud .ph img{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .4s ease}
-  .aud article:hover .ph img{transform:scale(1.045);opacity:1}
+  @media (hover:hover){.aud article:hover .ph img{transform:scale(1.045);opacity:1}}
   .tag{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
-  .tag:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+  @media (hover:hover){.tag:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.28)}}
   .tag .stitch g{transition:transform .35s ease}
-  .tag:hover .stitch g{transform:translateX(6px)}
+  @media (hover:hover){.tag:hover .stitch g{transform:translateX(6px)}}
   .photo img{will-change:transform}
   .top{transition:box-shadow .3s ease}
   .btn{transition:background-color .2s ease,color .2s ease,transform .2s ease}
@@ -213,7 +232,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 @keyframes slide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
 .top.scrolled{box-shadow:0 6px 18px rgba(21,32,51,.08)}
 .spec tbody tr{transition:background-color .2s ease}
-.spec tbody tr:hover{background:var(--paper)}
+@media (hover:hover){.spec tbody tr:hover{background:var(--paper)}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -222,11 +241,15 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
   <div class="wrap">
     <a class="wm" href="#top" aria-label="Field and Crew Supply, home"><b>FIELD &amp; CREW</b><span class="sub fit">WHOLESALE AND SUPPLY</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#who">Who we supply</a>
-      <a href="#products">Products</a>
-      <a href="#process">How ordering works</a>
-      <a href="#buyers">For buyers</a>
+      <div class="links" id="site-links">
+        <a href="#who">Who we supply</a>
+        <a href="#products">Products</a>
+        <a href="#process">How ordering works</a>
+        <a href="#buyers">For buyers</a>
+        <a class="menu-only" href="#quote">Request a quote</a>
+      </div>
       <a class="btn solid" href="#quote">Request a quote</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
     </nav>
   </div>
 </header>
@@ -409,6 +432,11 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
 
 <script>
 (function(){
+  const topBar=document.querySelector('.top'), menuBtn=document.querySelector('.menu-btn');
+  const setMenu=open=>{topBar.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',open?'true':'false');};
+  menuBtn.addEventListener('click',()=>setMenu(!topBar.classList.contains('open')));
+  document.querySelectorAll('#site-links a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
   document.documentElement.classList.add('js');
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets=document.querySelectorAll('.reveal,.reveal-kids');
