@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Field &amp; Crew Supply</title>
-<meta name="description" content="Wholesale apparel and textiles for crews, teams, brands and facilities. Caps, uniforms, team wear, hi-vis and textiles, made to spec and priced direct from the factory.">
+<meta name="description" content="Wholesale apparel and textiles for crews, teams, brands and facilities. Headwear, uniforms, team apparel and textiles, made to spec and priced direct from the factory.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
@@ -185,7 +185,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
           <svg class="stitch" width="72" height="10" viewBox="0 0 72 10" aria-hidden="true"><g stroke-width="4"><line x1="0" y1="5" x2="16" y2="5"/><line x1="28" y1="5" x2="44" y2="5"/><line x1="56" y1="5" x2="72" y2="5"/></g></svg>
           <div class="ctas" style="margin-top:24px">
             <a class="btn solid" href="#quote">Request a quote</a>
-            <a class="btn line" href="#quote" data-need="Sample kit">Order a sample kit</a>
+            <a class="btn line" href="#products">See what we make</a>
           </div>
         </div>
       </div>
@@ -211,13 +211,13 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         <article>
           <h3 class="wide">Crews</h3>
           <p class="for">Cities, police, fire, public works and parks</p>
-          <ul><li>Caps and beanies</li><li>Uniform shirts and polos</li><li>Hi-vis vests and outerwear</li><li>Duty and gear bags</li></ul>
+          <ul><li>Caps and beanies</li><li>Uniform shirts and polos</li><li>Work pants and jackets</li></ul>
           <p class="pitch">Your go-to supplier for crew apparel, priced direct from the factory.</p>
         </article>
         <article>
           <h3 class="wide">Teams</h3>
           <p class="for">School athletics, coaches, booster clubs and youth leagues</p>
-          <ul><li>Team caps and visors</li><li>Practice and game wear</li><li>Spirit wear</li><li>Team bags</li></ul>
+          <ul><li>Team caps and visors</li><li>Practice and game wear</li><li>Spirit wear</li></ul>
           <p class="pitch">Team wear and caps, made to spec and delivered before the season.</p>
         </article>
         <article>
@@ -248,10 +248,8 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
           <tbody>
             <tr><td>Headwear</td><td>Structured and unstructured caps, trucker caps, visors, beanies</td><td>Embroidered or printed logo, your colors, adjustable or fitted</td></tr>
             <tr><td>Uniforms</td><td>Work shirts, polos, crew tees, pants, jumpsuits</td><td>Department colors, name and rank embroidery, sizing to 5XL</td></tr>
-            <tr><td>Team wear</td><td>Game and practice wear, warm-ups, spirit wear</td><td>School and league colors, numbers and names</td></tr>
-            <tr><td>Hi-vis</td><td>Safety vests, hi-vis tees and outerwear</td><td>ANSI/ISEA 107 classes on request</td></tr>
+            <tr><td>Team apparel</td><td>Game and practice wear, warm-ups, spirit wear</td><td>School and league colors, numbers and names</td></tr>
             <tr><td>Textiles</td><td>Blankets, sheets, towels, aprons</td><td>Weight in GSM, blend and size to your bid spec</td></tr>
-            <tr><td>Bags</td><td>Duffels, gear bags, backpacks, totes</td><td>Logo placement, reinforced seams, bulk packing</td></tr>
           </tbody>
         </table>
       </div>
@@ -295,7 +293,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
       </div>
       <dl class="facts">
         <div><dt>Vendor documents</dt><dd>W-9, certificate of insurance and capability statement on request.</dd></div>
-        <div><dt>Commodity codes (NIGP)</dt><dd class="codes">200 Clothing · 201 Accessories · 345 Safety · 680 Police supplies · 800 Footwear · 850 Textiles</dd></div>
+        <div><dt>Commodity codes (NIGP)</dt><dd class="codes">200 Clothing · 201 Accessories · 680 Police supplies · 800 Footwear · 850 Textiles</dd></div>
         <div><dt>How we sell</dt><dd>Informal quotes, sealed bids, and cooperative contracts as awarded.</dd></div>
         <div><dt>Service area</dt><dd>We supply customers anywhere in the United States.</dd></div>
       </dl>
@@ -308,17 +306,17 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
         <h2 id="q-h" class="wide">Request a quote</h2>
         <p>Tell us what you buy today and how much. We reply with line-item pricing and a sample plan within five to seven business days.</p>
         <p>Prefer email? Send your bid sheet to:</p>
-        <div class="addr"><code id="email">quote@fieldandcrew.com</code><button class="copy" type="button" id="copy">Copy</button></div>
+        <div class="addr"><code id="email">info@fieldandcrew.com</code><button class="copy" type="button" id="copy">Copy</button></div>
       </aside>
       <form id="qform" novalidate>
-        <div class="f"><label for="org">Organization</label><input id="org" name="org" autocomplete="organization" required placeholder="City of Plano Parks"></div>
-        <div class="f"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Jordan Lee"></div>
-        <div class="f"><label for="mail">Work email</label><input id="mail" name="mail" type="email" autocomplete="email" required placeholder="jlee@plano.gov"></div>
-        <div class="f"><label for="type">We are a</label>
+        <div class="f"><label for="org">Company, organization or city name</label><input id="org" name="org" autocomplete="organization" required></div>
+        <div class="f"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="mail">Work email</label><input id="mail" name="mail" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="type">Type of organization</label>
           <select id="type" name="type"><option>City or county department</option><option>Police or fire department</option><option>School district or team</option><option>Youth league</option><option>Restaurant, retail or hotel group</option><option>Correctional or detention facility</option><option>Team dealer or reseller</option></select></div>
         <div class="f"><label for="need">Products</label>
-          <select id="need" name="need"><option>Caps and headwear</option><option>Uniforms and polos</option><option>Team wear</option><option>Hi-vis</option><option>Blankets, linens and towels</option><option>Bags</option><option>Sample kit</option><option>Several of these</option></select></div>
-        <div class="f"><label for="qty">Approximate quantity</label><input id="qty" name="qty" inputmode="numeric" placeholder="1,200 caps"></div>
+          <select id="need" name="need"><option>Headwear</option><option>Uniforms</option><option>Team apparel</option><option>Blankets, linens and towels</option><option>Other</option></select></div>
+        <div class="f"><label for="qty">Approximate quantity</label><input id="qty" name="qty" inputmode="numeric" placeholder="1,000 units"></div>
         <div class="f full"><label for="msg">Details</label><textarea id="msg" name="msg" placeholder="Colors, logo, sizes, needed-by date, or a link to your bid."></textarea></div>
         <div class="form-foot"><button class="btn solid" type="submit">Request a quote</button><small>We reply within five to seven business days.</small></div>
         <div class="done" id="done" hidden role="status"></div>
@@ -335,7 +333,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
       <p style="margin-top:18px">Wholesale apparel and textiles for crews, teams, brands and facilities.</p>
     </div>
     <ul aria-label="Sections"><li><a href="#who">Who we supply</a></li><li><a href="#products">Products</a></li><li><a href="#process">How ordering works</a></li><li><a href="#buyers">For buyers</a></li></ul>
-    <ul aria-label="Contact"><li>quote@fieldandcrew.com</li><li>raymond@fieldandcrew.com</li><li>Dallas, Texas</li></ul>
+    <ul aria-label="Contact"><li>info@fieldandcrew.com</li><li>7700 Windrose Ave.<br>Plano, TX 75024</li></ul>
     <div class="legal"><span>© 2026 Field &amp; Crew Supply</span><span>Crew. Field. Team. Supplied.</span></div>
   </div>
 </footer>
@@ -352,7 +350,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
     const v=id=>document.getElementById(id).value.trim();
     const summary='Organization: '+v('org')+'\nName: '+v('name')+'\nEmail: '+v('mail')+'\nType: '+v('type')+'\nProducts: '+v('need')+'\nQuantity: '+(v('qty')||'—')+'\nDetails: '+(v('msg')||'—');
     done.hidden=false;
-    done.innerHTML='<p><strong>Quote request ready.</strong> Online submission goes live with our launch. For now, copy this summary into an email to quote@fieldandcrew.com.</p><pre></pre>';
+    done.innerHTML='<p><strong>Quote request ready.</strong> Online submission goes live with our launch. For now, copy this summary into an email to info@fieldandcrew.com.</p><pre></pre>';
     done.querySelector('pre').textContent=summary;
   });
   const btn=document.getElementById('copy');
